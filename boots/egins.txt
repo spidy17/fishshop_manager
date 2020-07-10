@@ -1,0 +1,14 @@
+ && $email==null || $email=="" && $address==null || $address=="" $$ $city==null || $city=="" && $postal==null || $postal=="" && $phone==null || $phone=="")
+{
+header('location:http://localhost/boots/tables.php');
+}
+else
+{
+$q="update customer set Name=$name, Email=$email, Address=$address, City=$city, Postal=$postal, Phone=$phone where id=$id";
+
+mysqli_query($con,$q);
+header('location:http://localhost/boots/tables.php');
+}
+mysqli_close($con);
+
+?>
